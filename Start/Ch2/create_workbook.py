@@ -16,7 +16,7 @@ sheet.title = "First"
 # Add some data to the new sheet
 sheet["A1"] = "Test Data"
 sheet["B1"] = 123.4567
-sheet["C1"] = datetime.datetime(2030,4,1)
+sheet["C1"] = datetime.datetime(2030,4,1).strftime("%Y-%m-%d")
 
 # Use the cell() function to fill a row with values
 for i in range(1,11):
