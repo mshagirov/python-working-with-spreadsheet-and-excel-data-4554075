@@ -16,7 +16,14 @@ data = [
   {"Item Name":"Strawberries", "Category":"Fruits", "Quantity":90, "Wholesale Price":1.20, "Consumer Price":1.50}
 ]
 
-# function to write the data
+fieldnames = list(data[0].keys())
 
+# function to write the data
+def write_dict_to_csv(data, filename):
+  with open(filename, 'w', newline='') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(data)
 
 # write the data to the file
+write_dict_to_csv(data, "output_dict.csv")

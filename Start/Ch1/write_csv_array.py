@@ -14,5 +14,10 @@ data = [
   ["Strawberries","Fruits",90,1.20,1.50]
 ]
 
+def write_array_to_csv(data, filename):
+  with open(filename, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(data)
 
 # Write data to CSV file
+write_array_to_csv(data, "output.csv")
